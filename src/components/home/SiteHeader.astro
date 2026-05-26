@@ -1,0 +1,24 @@
+---
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "Commissions", href: "/commissions" },
+  { label: "Contact", href: "/contact" },
+];
+---
+
+<nav class="site-header" aria-label="Primary navigation">
+  <div class="frame-shell site-header__inner">
+    <a class="site-header__brand" href="/" aria-label="Ta'i Paitai home">TA'I PAITAI</a>
+    <ul class="site-header__nav">
+      {
+        navItems.map((item) => (
+          <li>
+            <a class={item.label === "Home" ? "is-active" : ""} href={item.href}>
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</nav>

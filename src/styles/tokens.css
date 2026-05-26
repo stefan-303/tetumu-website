@@ -1,0 +1,25 @@
+:root {
+  --color-bg-dark: #1f1f1f;
+  --color-text-light: #eee7d9;
+  --color-white: #ffffff;
+  --color-accent: #bd7338;
+  --font-display: "Noto Serif Display", Georgia, serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --figma-frame: 1440px;
+  --wide-frame-width: 1680px;
+  --frame-width: var(--figma-frame);
+  --container-width: 1280px;
+  --page-padding: 80px;
+  --hero-height: 100svh;
+  --hero-copy-inset: 60px;
+  --hero-title-size: clamp(72px, 9svh, 88px);
+  --gap-nav: 60px;
+  --tracking-brand: 0.2em;
+  --tracking-hero-label: 0.2em;
+}
+
+@media (min-width: 1600px) {
+  :root {
+    --frame-width: var(--wide-frame-width);
+  }
+}
