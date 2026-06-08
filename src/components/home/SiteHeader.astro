@@ -16,8 +16,18 @@ const isActive = (href: string) => {
 <nav class="site-header" aria-label="Primary navigation">
   <div class="frame-shell site-header__inner">
     <a class="site-header__brand" href="/" aria-label="Ta'i Paitai home">TA'I PAITAI</a>
-    <button class="site-header__menu-button" type="button" aria-label="Menu">MENU</button>
-    <ul class="site-header__nav">
+    <button
+      class="site-header__menu-button"
+      type="button"
+      aria-label="Menu"
+      aria-controls="site-header-menu"
+      aria-expanded="false"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+    <ul class="site-header__nav" id="site-header-menu">
       {
         navItems.map((item) => (
           <li>
@@ -30,3 +40,35 @@ const isActive = (href: string) => {
     </ul>
   </div>
 </nav>
+
+<script>
+  const headers = document.querySelectorAll(".site-header");
+
+  headers.forEach((header) => {
+    const button = header.querySelector<HTMLButtonElement>(".site-header__menu-button");
+    const menu = header.querySelector<HTMLElement>(".site-header__nav");
+
+    if (!button || !menu) return;
+
+    const setOpen = (open: boolean) => {
+      header.classList.toggle("is-menu-open", open);
+      button.setAttribute("aria-expanded", String(open));
+    };
+
+    button.addEventListener("click", () => {
+      setOpen(button.getAttribute("aria-expanded") !== "true");
+    });
+
+    menu.addEventListener("click", (event) => {
+      if ((event.target as Element).closest("a")) setOpen(false);
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!header.contains(event.target as Node)) setOpen(false);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") setOpen(false);
+    });
+  });
+</script>
