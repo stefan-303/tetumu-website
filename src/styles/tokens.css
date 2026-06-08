@@ -1,8 +1,15 @@
 :root {
   --color-bg-dark: #1f1f1f;
+  --color-bg-cream: #f6f0e5;
+  --color-bg-warm: #eee7d9;
+  --color-ink: #1d150e;
+  --color-body: #5a5148;
   --color-text-light: #eee7d9;
   --color-white: #ffffff;
   --color-accent: #bd7338;
+  --color-accent-deep: #b8571f;
+  --color-divider: #b8916e;
+  --color-soft-divider: #bebebe;
   --font-display: "Noto Serif Display", Georgia, serif;
   --font-body: Inter, system-ui, sans-serif;
   --figma-frame: 1440px;
@@ -13,6 +20,11 @@
   --hero-height: 100svh;
   --hero-copy-inset: 60px;
   --hero-title-size: clamp(72px, 9svh, 88px);
+  --about-height: 691px;
+  --about-text-width: 490px;
+  --about-image-width: 761px;
+  --about-image-max-wide: 820px;
+  --practice-strip-width: 1212px;
   --gap-nav: 60px;
   --tracking-brand: 0.2em;
   --tracking-hero-label: 0.2em;

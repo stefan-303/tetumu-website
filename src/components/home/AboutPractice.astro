@@ -1,0 +1,68 @@
+---
+const practiceItems = [
+  {
+    title: "PRACTICE",
+    body: "Each piece shaped through time, story and tradition",
+  },
+  {
+    title: "CULTURE",
+    body: "Grounded in Polynesian Heritage and Practice",
+  },
+  {
+    title: "MATERIAL",
+    body: "Working with Natural Fibres that carry meaning",
+  },
+];
+---
+
+<section class="about-practice section" aria-labelledby="about-practice-title">
+  <div class="about-practice__intro">
+    <div class="about-practice__content">
+      <p class="section-eyebrow">ABOUT / PRACTICE</p>
+      <h2 id="about-practice-title">About Ta'i</h2>
+      <div class="about-practice__body">
+        <p>
+          Ta'i Paitai is a Rarotongan artist and traditional weaver. His work is grounded
+          in cultural practice, story, and identity rather than production. Each piece carries
+          knowledge and meaning, shaped through time, material, and lived experience.
+        </p>
+        <p>
+          This site presents his work as an evolving practice. It offers a place to understand
+          what he does, how he works, and the cultural context behind the pieces he creates.
+        </p>
+      </div>
+      <span class="about-practice__rule" aria-hidden="true"></span>
+    </div>
+    <div class="about-practice__media" aria-hidden="true">
+      <img
+        src="/assets/images/home/about-practice.webp"
+        alt=""
+      />
+      <span class="about-practice__image-overlay"></span>
+    </div>
+  </div>
+
+  <div class="practice-strip">
+    <div class="practice-strip__inner">
+      <figure class="practice-quote">
+        <blockquote>
+          Weaving is how I remember,<br />
+          how I honour how I carry<br />
+          our stories forwards
+        </blockquote>
+        <figcaption><span></span>TA'I PAITAI</figcaption>
+      </figure>
+      <div class="practice-strip__items" aria-label="Practice themes">
+        {
+          practiceItems.map((item) => (
+            <article class="practice-item">
+              <h3>{item.title}</h3>
+              <span aria-hidden="true"></span>
+              <p>{item.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

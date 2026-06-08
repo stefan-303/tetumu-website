@@ -1,0 +1,105 @@
+---
+import SiteHeader from "../components/home/SiteHeader.astro";
+import Footer from "../components/home/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const commissionImages = [
+  {
+    src: "/assets/images/commissions/commission-1.png",
+    alt: "Green and white woven kete on red patterned fabric.",
+  },
+  {
+    src: "/assets/images/commissions/commission-2.png",
+    alt: "Bright blue woven kete with upright handles.",
+  },
+  {
+    src: "/assets/images/commissions/commission-3.png",
+    alt: "Blue woven kete on red fabric viewed from above.",
+  },
+  {
+    src: "/assets/images/commissions/commission-4.png",
+    alt: "Green and white woven kete with pale handles.",
+  },
+];
+---
+
+<BaseLayout
+  title="Kete Commissions | Ta'i Paitai"
+  description="Selective Kete commissions by Ta'i Paitai, handmade through a personal and considered process."
+>
+  <main class="commissions-page">
+    <section class="commissions-hero" aria-labelledby="commissions-title">
+      <SiteHeader />
+
+      <div class="commissions-hero__content">
+        <p class="section-eyebrow">COMMISSIONS</p>
+        <h1 id="commissions-title">Kete Commissions</h1>
+        <div class="commissions-hero__body">
+          <p>
+            Tai&rsquo;s Kete commissions are selective and limited. Each piece is handmade
+            and created through a personal process, not treated as a standard product
+            order. Commissions are for people wanting something considered, meaningful,
+            and connected to a person, place, occasion, or story.
+          </p>
+          <p>
+            The process begins with a conversation. Tai takes time to understand who
+            the Kete is for, what it marks, and what the piece needs to carry.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="commissions-gallery" aria-label="Kete commission examples">
+      <div class="commissions-gallery__grid">
+        {
+          commissionImages.map((image) => (
+            <figure class="commissions-gallery__item">
+              <img src={image.src} alt={image.alt} />
+            </figure>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="commissions-contact" aria-labelledby="commissions-contact-title">
+      <div class="commissions-contact__inner">
+        <div class="commissions-contact__copy">
+          <p class="section-eyebrow">COMMISSIONS</p>
+          <h2 id="commissions-contact-title">Contact Ta&rsquo;i</h2>
+          <span class="commissions-contact__rule" aria-hidden="true"></span>
+          <p>
+            Tai&rsquo;s Kete commissions are selective and limited. Each piece is handmade
+            and created through a personal process, not treated as a standard product
+            order.
+          </p>
+        </div>
+
+        <form class="commissions-contact__form" aria-label="Commission inquiry form">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" autocomplete="name" />
+          </label>
+          <label>
+            <span>Phone</span>
+            <input type="tel" name="phone" autocomplete="tel" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" autocomplete="email" />
+          </label>
+          <label>
+            <span>Location</span>
+            <input type="text" name="location" autocomplete="address-level2" />
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5"></textarea>
+          </label>
+          <button type="button">SEND MESSAGE</button>
+        </form>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</BaseLayout>

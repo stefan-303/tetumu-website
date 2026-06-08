@@ -4,16 +4,24 @@ const navItems = [
   { label: "Commissions", href: "/commissions" },
   { label: "Contact", href: "/contact" },
 ];
+
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+
+const isActive = (href: string) => {
+  if (href === "/") return currentPath === "/";
+  return currentPath === href;
+};
 ---
 
 <nav class="site-header" aria-label="Primary navigation">
   <div class="frame-shell site-header__inner">
     <a class="site-header__brand" href="/" aria-label="Ta'i Paitai home">TA'I PAITAI</a>
+    <button class="site-header__menu-button" type="button" aria-label="Menu">MENU</button>
     <ul class="site-header__nav">
       {
         navItems.map((item) => (
           <li>
-            <a class={item.label === "Home" ? "is-active" : ""} href={item.href}>
+            <a class={isActive(item.href) ? "is-active" : ""} href={item.href}>
               {item.label}
             </a>
           </li>

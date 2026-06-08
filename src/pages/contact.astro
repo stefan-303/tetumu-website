@@ -1,0 +1,31 @@
+---
+import Footer from "../components/home/Footer.astro";
+import SiteHeader from "../components/home/SiteHeader.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Contact | Ta'i Paitai"
+  description="Contact Ta'i Paitai for art residencies, event management, and weaving teaching."
+>
+  <main class="contact-page">
+    <section class="contact-hero" aria-labelledby="contact-title">
+      <SiteHeader />
+
+      <div class="contact-hero__content">
+        <p class="section-eyebrow">GET IN TOUCH</p>
+        <h1 id="contact-title">Contact</h1>
+        <p>
+          Ta&rsquo;i Paitai is available for art residencies, event management, and
+          teaching weaving. For enquiries about commissions, workshops, cultural
+          projects, or community events, please get in touch by email.
+        </p>
+        <a class="contact-hero__email" href="mailto:teokotai.paitai@gmail.com">
+          teokotai.paitai@gmail.com
+        </a>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</BaseLayout>

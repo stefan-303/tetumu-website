@@ -3,11 +3,15 @@ import SiteHeader from "./SiteHeader.astro";
 ---
 
 <header class="hero section" aria-labelledby="hero-title">
-  <img
-    class="hero__image"
-    src="/assets/images/home/hero-desktop.webp"
-    alt="Ta'i Paitai weaving in a low-lit studio."
-  />
+  <picture>
+    <source media="(max-width: 640px)" srcset="/assets/images/home/hero-mobile.png" />
+    <source media="(max-width: 1024px)" srcset="/assets/images/home/hero-tablet.png" />
+    <img
+      class="hero__image"
+      src="/assets/images/home/hero-desktop.webp"
+      alt="Ta'i Paitai weaving in a low-lit studio."
+    />
+  </picture>
   <div class="hero__overlay" aria-hidden="true"></div>
   <SiteHeader />
   <div class="frame-shell hero__frame">
