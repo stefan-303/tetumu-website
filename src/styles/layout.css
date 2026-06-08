@@ -584,7 +584,7 @@
   }
 
   .commissions-contact {
-    padding-block: 120px 72px;
+    padding-block: 120px;
   }
 
   .commissions-contact__inner {
@@ -612,7 +612,7 @@
 
 @media (max-width: 640px) {
   .contact-hero {
-    padding-block: 136px 96px;
+    padding-block: 136px;
   }
 
   .contact-hero__content {
@@ -633,7 +633,7 @@
   }
 
   .commissions-hero {
-    padding-block: 136px 96px;
+    padding-block: 136px;
   }
 
   .commissions-hero__content {
@@ -652,7 +652,7 @@
   }
 
   .commissions-gallery {
-    padding-block: 64px;
+    padding-block: 72px;
   }
 
   .commissions-gallery__grid {
@@ -661,7 +661,7 @@
   }
 
   .commissions-contact {
-    padding-block: 96px 64px;
+    padding-block: 96px;
   }
 
   .commissions-contact__inner {
